@@ -1,0 +1,214 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ------------------------COLORES------------------------ */
+.rojo {
+    background-color: red;
+}
+
+.blanco {
+    background-color: white;
+}
+
+.negro {
+    background-color: black;
+}
+
+.azul {
+    background-color: blue;
+}
+
+.verde {
+    background-color: greenyellow;
+}
+
+/* ----------------FIN-----COLORES------------------------ */
+
+body {
+    height: 100vh;
+    /* vh dice que utiliza el 100% de la vista del navegador */
+    width: 100%;
+    background: linear-gradient(0deg, rgb(87, 231, 250) 0%, rgb(38, 150, 236) 100%);
+    display: grid;
+    /* Para centrar un objeto */
+    place-items: center;
+    /* Para centrar un objeto */
+
+}
+
+.producto {
+    height: 80%;
+    width: 400px;
+    background-color: white;
+    border-radius: 14px;
+    padding: 8px;
+    overflow: hidden;
+    /* Oculta todo aquello que se desborda del contenedor */
+    box-shadow: 0px 0px 15px -3px rgb(0, 0, 0);
+    /* El primer 0 es el desplazamiento en X, el segundo es el desplazamiento en Y, el tercero es el
+    degradado de la sombra, el cuarto es el tamaño de la sombra y el quinto es el color. */
+
+    .header_prod {
+        /* Hacer clases hijas permite usar el mismo nombre de la clase en otras etiquetas sin mezclarse */
+        height: 40px;
+        width: 100%;
+        background-color: rgb(159, 161, 160);
+        border-radius: 10px 10px 0 0;
+        /* Podemos ajustar valor por valor para redondear bordes especificos */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px;
+
+        button{
+            height: 100%;
+            width: 40px;
+            border: none;
+            padding: 4px;
+            cursor: pointer;
+            border-radius: 20px;
+            background: none;
+            transition: .2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                height: 90%;
+                object-fit: cover;
+            }
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+    }
+
+    .main_prod {
+        height: calc(100% - 40px);
+        /* Los espacios son necesarios */
+        width: 100%;
+        background-color: chartreuse;
+        overflow: hidden;
+        border-radius: 0 0 10px 10px;
+
+        .imagen_prod {
+            height: 55%;
+            width: 100%;
+            background-color: rgb(225, 232, 237);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                list-style: none;
+                display: flex;
+                /* Ordenamiento horziontal */
+                justify-content: center;
+                /* Centraliza los objetos */
+                gap: 10px;
+                /* gap separa elementos dentro de un contenedor flex */
+
+                li {
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 100%;
+                    /* Al poner el border-radius al 100% creamos un circulo*/
+                }
+
+                button{
+                    height: 100%;
+                    width: 40px;
+                    border: none;
+                    padding: 4px;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    background: none;
+                    transition: .2s;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    img {
+                        height: 90%;
+                        object-fit: cover;
+                    }
+                }
+                button:hover {
+                    transform: scale(1.1);
+                }
+                button:active {
+                    transform: scale(0.9);
+                }
+            }
+
+            ul.talles li {
+                height: 40px;
+                width: 40px;
+                padding: 5px;
+                border: solid 2px black;
+                /* Borde al texto */
+                display: grid;
+                place-items: center; /* Centraliza vertical y horizontalmente */
+            }
+        }
+
+        .desc_prod {
+            height: 45%;
+            width: 100%;
+            background-color: rgb(3, 17, 27);
+            /* padding: 10px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .apartado_boton {
+                height: 30%;
+                width: 100%;
+                padding: 17px;
+                background-color: rgb(117, 200, 255);
+                display: flex;
+                justify-content: center;
+                place-items: center;
+            }
+            .apartado_texto {
+                height: 100%;
+                width: 100%;
+                background-color: rgb(85, 172, 238);
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            input[type=submit] {
+                height: 40px;
+                width: 70%;
+                padding: 5px 10px;
+                border-radius: 20px;
+
+                font-size: larger;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                border: none;
+                transition: .2s;
+            }
+
+            input[type=submit]:hover {
+                transform: scale(1.05);
+            }
+            input[type=submit]:active {
+                transform: scale(1);
+            }
+        }
+    }
+}
